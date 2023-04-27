@@ -18,11 +18,10 @@ public class DbConnectionListener implements ServletContextListener {
         String dbUrl = sce.getServletContext().getInitParameter("DB_URL");
         String dbUser = sce.getServletContext().getInitParameter("DB_USER");
         String dbPassword = sce.getServletContext().getInitParameter("DB_PASSWORD");
-
-
+        
         try{
             // Driver load
-            Class.forName("org.mariaDB.jdbc.Driver");
+            Class.forName("org.mariadb.jdbc.Driver");
 
             // Connection 객체를 생성(생성이 됐다면 DB에 연결이 된 것)
             Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);

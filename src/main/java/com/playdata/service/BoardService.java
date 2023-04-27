@@ -4,6 +4,7 @@ import com.playdata.dao.BoardDao;
 import com.playdata.dto.BoardDto;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class BoardService {
@@ -16,5 +17,10 @@ public class BoardService {
         BoardDao boardDao = new BoardDao();
         boardDao.selectAll(req);
         return boardDao.selectAll(req);
+    }
+
+    public BoardDto getBoard(String id, HttpServletRequest req) {
+        BoardDao boardDao = new BoardDao();
+        return boardDao.selectById(id, req);
     }
 }
